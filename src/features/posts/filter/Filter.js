@@ -17,6 +17,7 @@ const Filter = () => {
   const renderedTags = [...new Set(platforms)].map((tag) => {
     return (
       <button
+        key={tag}
         className={filter === tag ? "text-red-500" : ""}
         onClick={() => dispatch(setFilter(tag))}
       >
@@ -27,8 +28,8 @@ const Filter = () => {
 
   return (
     <div className="py-4">
-      <div className="font-bold py-2">Browse by platform</div>
-      <div className="flex flex-row gap-4 text-blue-600 justify-center md:justify-start">
+      <div className="py-2 font-bold">Browse by platform</div>
+      <div className="flex flex-row justify-center gap-4 text-blue-600 md:justify-start">
         {renderedTags}
       </div>
     </div>
